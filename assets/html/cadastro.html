@@ -1,46 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-    <script defer> src="js/tasks.js"  </script>
-    <title>Formulario</title>  
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <title>Formulário de Login</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-
-    <h1>To-Do App</h1>
-    <h2>Acessar</h2>
-
-    <form>
-        <div class="form-group">
-            <label for="InputNome">Nome:</label>
-            <input type="text" class="form-control" id="name" aria-describedby="nomeHelp" placeholder="Seu nome">
+    <main class="container">
+      <h1>To-Do App </h1>
+        <h2>Cadastro</h2>
+        <form action="">
+          <div class="input-field">
+            <input type="name"  id="InputName" required aria-describedby="nameHelp" 
+            placeholder="Seu nome">
+              <div class="underline"></div>
           </div>
-
-          <div class="form-group">
-            <label for="InputSobrenome">Sobrenome:</label>
-            <input type="email" class="form-control" id="sobrenome" aria-describedby="sobrenomelHelp" placeholder="Seu sobrenome">
+          <div class="input-field">
+            <input type="name"  id="InputSobrenome" required aria-describedby="sobrenomeHelp" 
+            placeholder="Seu sobrenome">
+              <div class="underline"></div>
           </div>
+            <div class="input-field">
+              <input type="email"  id="InputEmail1" required aria-describedby="emailHelp" 
+              placeholder="Seu email">
+                <div class="underline"></div>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" id="password" required
+                    placeholder="Insira sua senha">
+                <div class="underline"></div>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password2" id="confirm_password" required
+                    placeholder="Confirme sua senha">
+                <div class="underline"></div>
+            </div>
 
-        <div class="form-group">
-          <label for="InputEmail1">Email:</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+            <input type="submit" value="Bloqueado">
+
+            
+        </form>
+
+        <div class="footer">
+          <div><a href="/assets/index.html">Já possui conta? Acesse aqui</a></div>
+          
         </div>
+    </main>
 
-        <div class="form-group">
-          <label for="InputPassword1">Senha</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Bloqueado</button>
-
-        <div><a href="url">Não possui conta? Crie agora mesmo</a></div>
-    </div>
-      </form>
-        
-        
-
+    <script type="text/javascript" src="/assets/js/tasks.js" defer></script>
 </body>
 </html>
