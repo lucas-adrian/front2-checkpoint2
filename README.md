@@ -24,3 +24,4 @@ Entender os momentos da busca para desenvolver cada uma das funções é muito �
 DOCUMENTAÇÃO DA API
 https://ctd-todo-api.herokuapp.com/
 
+https://dh-3bi-frontend2-checkpoint2-resolucao-parcial.netlify.app/index.html
