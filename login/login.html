@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+  <title>Formulário de Login</title>
+  <link rel="stylesheet" href="../globalassets/css/style.css">
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>To-Do App </h1>
+    <h2>Acessar</h2>
+
+    <form id="formLogin" action="">
+
+      <div class="input-field">
+        <input type="email" id="InputEmail1" required aria-describedby="emailHelp" placeholder="Seu email">
+        <small id="inputEmailValidacao"></small>
+        <div class="underline"></div>
+      </div>
+
+      <div class="input-field">
+        <input type="password" name="password" id="password" required placeholder="Insira sua senha">
+        <small id="inputPasswordValidacao"></small>
+        <div class="underline"></div>
+        <div class="underline"></div>
+      </div>
+
+      <small id="loginValidacao"></small>
+      <button type="submit" id="buttonAccess">Acessar</button>
+    </form>
+
+    <div class="footer">
+      <div><a href="../cadastro/cadastro.html">Não possui conta? Crie agora mesmo</a></div>
+    </div>
+  </main>
+
+  <script type="text/javascript" src="./assets/js/login.js" defer></script>
+
+</body>
+</html>
