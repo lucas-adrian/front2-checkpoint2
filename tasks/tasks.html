@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/tasks/tasks/css/tasks.css">
+    <title>To-Do</title>
+</head>
+<body>
+    <!-- <header class="topo">
+        <nav>Tarefas</nav>
+        <div class="user-info"></div>
+      
+      </header> -->
+      <header>
+        <nav>
+          <a href="#">Tarefas</a>
+        </nav>
+    
+        <div class="user-info">
+          <p id="nomeUsuarioEmTarefas"></p>
+          <!-- <div class="user-image"></div> -->
+          <p id="closeApp" onclick="encerrarSessao()">Finalizar sessão</i>
+          </p>
+        </div>
+      </header>
+      
+        <div class="container">
+          
+          <h3>Adicionar tarefa</h3>
+          <li><input id="new-task" type="text"><button>Adicionar</button></li>
+          
+          
+          <ul id="incomplete-tasks">
+            <li><input type="checkbox"><label>Exemplo</label><input type="text"><button class="edit">Editar</button><button class="delete">Deletar</button></li>
+            <!-- <li class="editMode"><input type="checkbox"><label>Exemplo edição</label><input type="text" value="Exemplo edição"><button class="edit">Editar</button><button class="delete">Deletar</button></li> -->
+
+          </ul>
+          
+          <h3>Completas</h3>
+          <ul id="completed-tasks">
+            <li><input type="checkbox" checked><label>Exemplo tarefa concluida</label><input type="text"><button class="edit">Editar</button><button class="delete">Deletar</button></li>
+          </ul>
+        </div>
+    
+        <script type="text/javascript" src="/tasks/tasksassets/js/tasks.js"></script>
+    
+    
+</body>
+</html>
