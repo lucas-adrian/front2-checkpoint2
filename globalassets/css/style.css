@@ -120,3 +120,8 @@ form .input-field {
     text-align: center;
 }
 
+.textoBotao {
+    background-color: transparent;
+    color: white
+}
+

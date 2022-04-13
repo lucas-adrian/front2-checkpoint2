@@ -34,6 +34,8 @@ let loginApiValidacao = true;
 botaoAcessarLogin.setAttribute("disabled", true);
 botaoAcessarLogin.innerText = "Bloqueado";
 
+const BASE_URL_API = 'https://ctd-todo-api.herokuapp.com/v1';
+
 const loginUsuario = {
   email: "",
   password: "",
@@ -72,7 +74,7 @@ botaoAcessarLogin.addEventListener("click", function (evento) {
             },
         }
 
-        fetch("https://ctd-todo-api.herokuapp.com/v1/users/login", configuracoesRequisicao)
+        fetch(`${BASE_URL_API}/users/login`, configuracoesRequisicao)
         .then((response) => {
             if (response.status == 201) {
                 return response.json()
@@ -86,7 +88,8 @@ botaoAcessarLogin.addEventListener("click", function (evento) {
         });
 
         function loginSucesso(jwtRecebido) {
-            document.cookie = `jwt=${jwtRecebido}`;
+            // document.cookie = `jwt=${jwtRecebido}`;
+            localStorage.setItem("@TOKEN", jwtRecebido)
             window.location.pathname = "/front2-checkpoint2/tasks/tasks.html"
         }
 
@@ -141,6 +144,7 @@ campoEmailLogin.addEventListener("blur", function () {
   validaTelaDeLogin();
 });
 
+//foco no campo senha
 campoSenhaLogin.addEventListener("blur", function () {
     let inputPasswordValidacao = document.getElementById("inputPasswordValidacao");
     campoSenhaLogin.style.border = `1px solid #E42323BF`;
@@ -171,3 +175,73 @@ function validaTelaDeLogin() {
         return true;
     }
 }
+
+// function autenticarUsuario(credenciaisDoUsuario) {
+
+//     // Configurações da requisição POST.
+//     let configuracoes = {
+//         method: 'POST',
+//         body: JSON.stringify(credenciaisDoUsuario),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//     }
+
+//     // Requisição de autenticação do usuário.
+//     fetch(`${BASE_URL_API}/users/login/`, configuracoes)
+//         .then(function (respostaDoServidor) {
+                
+//             // Retorno apenas dos dados convertidos em JSON.
+//             let JSON = respostaDoServidor.json();
+
+//             // Retorno da promessa convertida em JSON.
+//             return JSON;
+//         })
+//         .then(function (respostaDoServidorEmJSON) {
+            
+//             // Capturando o retorno token JWT do Servidor.
+//             let tokenDoUsuario = respostaDoServidorEmJSON.jwt;
+
+//             // localStorage.setItem("@TOKEN", tokenDoUsuario)
+
+//             // Apresentando resultado final no console.log().
+//             console.log(`POST autenticarUsuario() ${JSON.stringify(respostaDoServidorEmJSON)}`);
+
+//         });
+// }
+
+// Requisição dos dados de cadastro do Usuário.
+// pedirInformacoesDoUsuario(tokenDoUsuario);
+
+/**
+//  * Pedi os dados de cadastro do usuário.
+//  * @param {string} tokenDoUsuario Token JWT da autenticação do usuário.
+//  */
+// function pedirInformacoesDoUsuario(tokenDoUsuario) {
+
+//     // Configurações da requisição GET.
+//     let configuracoes = {
+//         method: 'GET',
+//         headers: {
+//             'authorization': tokenDoUsuario
+//         },
+//     }
+
+//     // Requisição para retorno dos dados de cadastro do usuário.
+//     fetch(`${BASE_URL_API}/users/getMe/`, configuracoes)
+//         .then(function (respostaDoServidor) {
+                
+//             // Retorno apenas dos dados convertidos em JSON.
+//             let JSON = respostaDoServidor.json();
+
+//             // Retorno da promessa convertida em JSON.
+//             return JSON;
+//         })
+//         .then(function (respostaDoServidorEmJSON) {
+            
+//             // Apresentando resultado final no console.log().
+//             console.log(`GET pedirInformacoesDoUsuario() ${JSON.stringify(respostaDoServidorEmJSON)}`);
+
+//         });
+
+// }

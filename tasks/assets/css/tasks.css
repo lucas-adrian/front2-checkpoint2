@@ -1,0 +1,192 @@
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #088F8F, #9acd32);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(0, 0, 0);
+    background-color: rgb(226, 235, 152);
+    width: 100vw;
+    margin: auto;
+    font-weight: bold; 
+    margin-bottom: 32px;
+  }
+
+  .tarefas {
+    margin-left: 30px;
+    display: block;
+    width: fit-content;
+    padding: .7em 1em;
+    border-bottom: .2em solid rgb(14, 226, 31);
+    text-decoration: none;
+    color: rgb(1, 1, 1)
+  }
+  
+  .right-header {
+    display: flex;
+    align-items: center;
+    color: rgb(5, 5, 5);
+  }
+  
+  #nomeUsuarioEmTarefas {
+    width: fit-content;
+    opacity: .8;
+    margin-right: 15px;
+  }
+  
+  .closeApp {
+    margin-right: 10px;
+    font-size: .72em;
+    background-color: rgb(218, 88, 88);
+    color: white;
+    font-weight: bold;
+    border-radius: 50vh;
+    border-color: rgb(233, 28, 28);
+    padding: .7em 1em;
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .criar-tarefa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightcyan;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 32px;
+    padding: 12px 30px 12px 35px;
+    border-radius: 5px;
+  }
+
+  .criar-tarefa p{
+    display: flex;
+    padding-bottom: 3px;
+    font-weight: bold;
+  }
+
+  .main-form {
+    font-weight: bold;
+    display: flex;
+    background-color: lightcyan;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-form input {
+    font-size: 16px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: black;
+    border-width: 1px;
+    padding-bottom: 3px;
+  }
+
+  .mf-div {
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mf-div input {
+    margin-left: 12px;
+  }
+
+  .mf-div p{
+    margin-left: 4px;
+  }
+
+  #criarTarefa {
+    margin-left: 20px;
+  }
+
+  #new-task{
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .title {
+    font-size: 25px;
+    background-color: lightcyan;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 32px;
+    padding: 12px 30px 12px 35px;
+    border-radius: 5px;
+    margin-top: 80px;
+  }
+
+  .tpul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    background-color: lightcyan;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 12px;
+    padding: 12px 30px 12px 35px;
+    border-radius: 5px;
+    list-style-type: none;
+  }
+
+  .tpRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  h2 .title {
+    padding-top: 50px;
+  }
+
+  .ttul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    background-color: lightcyan;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 12px;
+    padding: 12px 30px 12px 35px;
+    border-radius: 5px;
+    list-style-type: none;
+  }
+
+  #user {
+    margin-right: 20px;
+  }
+
+  #taskDone {
+    cursor: pointer;
+  }
+
+  #criarTarefa {
+    cursor: pointer;
+  }
+
+  #edit {
+    cursor: pointer;
+  }
+
+  #delete {
+    cursor: pointer;
+  }

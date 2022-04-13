@@ -22,11 +22,15 @@ const usuarioObjetoCadastro = {
     password: ""
 }
 
-function cadastroSucesso(jsonRecebido) {
-    console.log("Json recebido ao cadastrar");
-    console.log(jsonRecebido);
-    alert("Usuário cadastrado com sucesso")
-    window.location.pathname = "/front2-checkpoint2/login/login.html"
+function cadastroSucesso() {
+    cuteAlert({
+        type: "success",
+        title: "cadastro realizado com sucesso!",
+        message: "vamos te redirecionar para o login :)",
+        buttonText: "okay"
+    })
+    var botao = document.getElementsByClassName('alert-button')
+    botao[0].addEventListener('click', () => {window.location.pathname = "/front2-checkpoint2/login/login.html"})
 }
 
 function cadastroErro(statusRecebido) {
@@ -63,8 +67,8 @@ botaoCriarConta.addEventListener('click', evento => {
                 return response.json()
             } throw response;
         })
-        .then(function (resposta) {
-            cadastroSucesso(resposta.jwt)
+        .then(function () {
+            cadastroSucesso()
         })
         .catch(error => {
             cadastroErro(error)
@@ -73,4 +77,8 @@ botaoCriarConta.addEventListener('click', evento => {
         alert("Todos os campos devem ser preenchidos para que possa prosseguir")
     }
 });
+
+
+
+
 
