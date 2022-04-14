@@ -20,8 +20,8 @@ body {
 
 main.container {
     background: white;
-    min-width: 420px;
-    min-height: 50vh;
+    width: 420px;
+    height: fit-content;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
@@ -37,7 +37,7 @@ main h2::before {
     content: '';
     position: absolute;
     height: 4px;
-    width: 25px;
+    width: 22px;
     bottom: 3px;
     left: 0;
     border-radius: 8px;
@@ -115,9 +115,14 @@ form .input-field {
 
 .footer {
     display: flex;
-    flex-direction: column;
+    gap: 5px;
     margin-top: 1rem;
     text-align: center;
+    justify-content: center;
+}
+
+.footer div {
+    display: flex;
 }
 
 .textoBotao {
