@@ -10,13 +10,16 @@
 </head>
 <body>
 
+  <script type="text/javascript" src="./assets/js/tasks.js" defer></script>
+  <script src="../globalassets/cute-alert-master/cute-alert.js"></script>
+
       <header class="main-header">
         <nav>
           <a href="#" class="tarefas">tarefas</a>
         </nav>
     
         <div class="right-header">
-          <p id="user"></p>
+          <p id="user-info"></p>
           <button class="closeApp" id='exit'>finalizar sessão</button>
         </div>
 
@@ -25,7 +28,7 @@
         <div class="criar-tarefa">
           <p>adicionar nova tarefa:</p>
           <form class="main-form">
-            <input id="new-task" type="text" placeholder="nome da tarefa">
+            <input id="new-task" type="text" placeholder="nome da tarefa" class="new-task">
             <div class="mf-div">
               <input type="radio" name="grupoRadio" id="i" checked><p>pendente</p>
               <input type="radio" name="grupoRadio"> <p>concluída</p>
@@ -51,11 +54,5 @@
           <ul class="ttul">
           </ul>
         </div>
-    
-        
-        <script type="text/javascript" src="./assets/js/tasks.js" defer></script>
-        <script src="../globalassets/cute-alert-master/cute-alert.js"></script>
-    
-    
 </body>
 </html>

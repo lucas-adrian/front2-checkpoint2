@@ -86,17 +86,6 @@ body {
     justify-content: space-between;
   }
 
-  .main-form input {
-    font-size: 16px;
-    background-color: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color: black;
-    border-width: 1px;
-    padding-bottom: 3px;
-  }
-
   .mf-div {
     margin-left: 25px;
     display: flex;
@@ -116,9 +105,20 @@ body {
     margin-left: 20px;
   }
 
-  #new-task{
+  .new-task{
     display: flex;
     flex-grow: 1;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    border-width: 1px;
+    padding-bottom: 3px;
+  }
+
+  .new-task:focus{
+    outline: none;
   }
 
   .title {
@@ -171,22 +171,6 @@ body {
     list-style-type: none;
   }
 
-  #user {
+  #user-info {
     margin-right: 20px;
-  }
-
-  #taskDone {
-    cursor: pointer;
-  }
-
-  #criarTarefa {
-    cursor: pointer;
-  }
-
-  #edit {
-    cursor: pointer;
-  }
-
-  #delete {
-    cursor: pointer;
   }

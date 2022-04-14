@@ -1,3 +1,5 @@
+localStorage.clear()
+
 function retiraEspacosDeUmValorInformado(valorRecebido) {
     return valorRecebido.trim();
 }
@@ -14,7 +16,7 @@ function validaEmailRecebido(emailRecebido) {
     }
 }
   
-  
+
 function elementoSmallErro(elementoRecebido) {
     elementoRecebido.style.color = "#E42323BF";
     elementoRecebido.style.fontSize = "8";
@@ -25,6 +27,7 @@ let campoEmailLogin = document.getElementById("InputEmail1");
 let campoSenhaLogin = document.getElementById("password");
 let botaoAcessarLogin = document.getElementById("buttonAccess");
 let formularioLogin = document.getElementById("formLogin");
+var botaoLogin = document.getElementsByClassName('botao')[0];
 let campoEmailLoginNormalizado;
 let campoSenhaLoginNormalizado;
 let emailValidacoesOk = false;
@@ -32,7 +35,7 @@ let senhaValidacoesOk = false;
 let loginApiValidacao = true;
 
 botaoAcessarLogin.setAttribute("disabled", true);
-botaoAcessarLogin.innerText = "Bloqueado";
+botaoAcessarLogin.innerText = "insira email e senha";
 
 const BASE_URL_API = 'https://ctd-todo-api.herokuapp.com/v1';
 
@@ -41,7 +44,7 @@ const loginUsuario = {
   password: "",
 };
 
-botaoAcessarLogin.addEventListener("click", function (evento) {
+botaoLogin.addEventListener("click", function (evento) {
     if (validaTelaDeLogin()) {
         evento.preventDefault();
 
@@ -117,7 +120,7 @@ botaoAcessarLogin.addEventListener("click", function (evento) {
 function resetaValidacaoLoginErro() {
     loginValidacao.innerHTML = "";
     botaoAcessarLogin.removeAttribute("disabled");
-    botaoAcessarLogin.innerText = "Acessar";
+    botaoAcessarLogin.innerText = "acessar";
     loginApiValidacao = true;
 }
 
@@ -167,11 +170,10 @@ campoSenhaLogin.addEventListener("blur", function () {
 function validaTelaDeLogin() {
     if (!emailValidacoesOk || !senhaValidacoesOk || !loginApiValidacao) {
         botaoAcessarLogin.setAttribute("disabled", true);
-        botaoAcessarLogin.innerText = "Bloqueado";
         return false;
     } else {
         botaoAcessarLogin.removeAttribute("disabled");
-        botaoAcessarLogin.innerText = "Acessar";
+        botaoAcessarLogin.innerText = "acessar";
         return true;
     }
 }

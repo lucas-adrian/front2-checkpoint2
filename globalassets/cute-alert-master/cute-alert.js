@@ -38,17 +38,17 @@ const cuteAlert = ({
       img = "/img/success.svg"
     }
 
-    // if (type === 'info'){
-    //   img = "/img/info.svg"
-    // }
+    if (type === 'info'){
+      img = "/img/info.svg"
+    }
 
-    // if (type === 'error'){
-    //   img = "/img/error.svg"
-    // }
+    if (type === 'error'){
+      img = "/img/error.svg"
+    }
 
-    // if (type === 'warning'){
-    //   img = "/img/warning.svg"
-    // }
+    if (type === 'warning'){
+      img = "/img/warning.svg"
+    }
 
     if (type === 'question') {
       img = "/img/question.svg"
