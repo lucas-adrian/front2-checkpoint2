@@ -144,8 +144,3 @@ botaoCriarConta.addEventListener('click', evento => {
           return
     }
 });
-
-
-
-
-

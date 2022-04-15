@@ -102,6 +102,9 @@ botaoLogin.addEventListener("click", function (evento) {
             campoSenhaLogin.value = "";
             console.log(statusRecebido);
             if (statusRecebido == 400 || statusRecebido == 404) {
+
+                /////pop up aqui
+
                 console.log("Ocorreu algum erro, verifique o e-mail e/ou senha");
                 loginValidacao.innerHTML = "Ocorreu algum erro, verifique o e-mail e/ou senha";
                 loginApiValidacao = false;
