@@ -16,6 +16,7 @@ body {
     justify-content: center;
 }
 
+<<<<<<< HEAD
 .social_icon span {
   font-size: 60px;
   margin-left: 10px;
@@ -47,6 +48,15 @@ body {
   left: 0;
   height: 100%;
   z-index: -1;
+=======
+main.container {
+    background: white;
+    width: 420px;
+    height: fit-content;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+>>>>>>> 68f35272e083a1194a36ff65fe2633a048923984
 }
 
 .container {
@@ -59,6 +69,7 @@ body {
   
 }
 
+<<<<<<< HEAD
 .img {
   display: flex;
   justify-content: flex-end;
@@ -74,6 +85,17 @@ body {
 
 .img img {
   width: 500px;
+=======
+main h2::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 22px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #088F8F, #9acd32);
+>>>>>>> 68f35272e083a1194a36ff65fe2633a048923984
 }
 
 form {
@@ -155,6 +177,7 @@ form {
   transition: 0.4s;
 }
 
+<<<<<<< HEAD
 .input-div:before {
   right: 50%;
 }
@@ -190,6 +213,18 @@ form {
   font-size: 1.2rem;
   color: #555;
   font-family: 'Roboto', sans-serif;;
+=======
+.footer {
+    display: flex;
+    gap: 5px;
+    margin-top: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer div {
+    display: flex;
+>>>>>>> 68f35272e083a1194a36ff65fe2633a048923984
 }
 
 .input-div.pass {

@@ -25,7 +25,8 @@ finalizarSessão.addEventListener('click', () => cuteAlert({
         localStorage.clear()
         window.location.pathname = "front2-checkpoint2/login/login.html"
     }
-  }))
+  })
+  )
 
 
 const bodyObject = {
@@ -153,8 +154,6 @@ function pedirListaDeTarefasUsuario() {
 
 }
 
-
-
 function carregarTarefas(b,c,d,e){
 
     const elementosLi = {
@@ -220,8 +219,48 @@ function carregarTarefas(b,c,d,e){
         tarefaConcluida.style.cursor = 'pointer'
         editarTask.style.cursor = 'pointer'
         excluirTask.style.cursor = 'pointer'
-        tarefaConcluida.addEventListener('click', () => {tarefaPronta(id)})
-        excluirTask.addEventListener('click', () => {deletarTarefa(id)})
+
+        tarefaConcluida.addEventListener('click', () => {
+            
+            var aux = elementosLi.p2.innerText
+            var textoTarefaBOLD = aux.bold()
+
+            cuteAlert({
+                type: "question",
+                title: "finalizar objetivo",
+                message: `você concluiu a tarefa: ${textoTarefaBOLD}?`,
+                confirmText: "yes",
+                cancelText: "nope"
+              }).then((e)=>{
+                  
+                  
+                if(e == "confirm"){
+                    tarefaPronta(id)
+                }
+              })
+        })
+
+        excluirTask.addEventListener('click', () => {
+            
+            var aux = elementosLi.p2.innerText
+            var textoTarefaBOLD = aux.bold()
+
+            cuteAlert({
+                type: "question",
+                title: "deletar objetivo",
+                message: `deletar a tarefa: ${textoTarefaBOLD}?`,
+                confirmText: "yes",
+                cancelText: "nope"
+              }).then((e)=>{
+                  
+
+                  
+                if(e == "confirm"){
+                    deletarTarefa(id)
+                }
+              })
+        })
+
         editarTask.addEventListener('click', () => {editarTarefa(id, campoTexto, li)})
     }
 
@@ -268,6 +307,9 @@ function refazerTarefa(idTarefa){
 
 function editarTarefa(idTarefa, campoTexto,li) {
 
+    var aux = elementosLi.p2.innerText
+    var textoTarefaBOLD = aux.bold()
+
     while (li.firstChild) {
         li.removeChild(li.lastChild);}
 
@@ -292,9 +334,55 @@ function editarTarefa(idTarefa, campoTexto,li) {
     li.appendChild(concluirEdicao)
     li.appendChild(cancelarEdicao)
 
-    concluirEdicao.addEventListener('click', () => {alterarTasks(idTarefa, input, nomeTarefa)})
+    concluirEdicao.addEventListener('click', () => {
+            
+        var inputBOLD = input.value.bold()
+
+        if (!!input.value === false) {
+            cuteAlert({
+                type: "error",
+                title: "alteração negada",
+                message: "escreva o novo nome da tarefa antes de concluir",
+                buttonText: "okay"
+            })
+            return
+        }
+
+        if (input.value == nomeTarefa) {
+            cuteAlert({
+                type: "error",
+                title: "alteração negada",
+                message: "escreva um novo nome para a tarefa",
+                buttonText: "okay"
+            })
+            return
+        }
+
+        if (input.value != nomeTarefa && input.value != "") {
+
+            cuteAlert({
+                type: "question",
+                title: "alterar objetivo",
+                message: `alterar o nome da tarefa de ${textoTarefaBOLD} para ${inputBOLD}?`,
+                confirmText: "yes",
+                cancelText: "nope"
+            }).then((e)=>{
+
+                if(e == "confirm"){
+                    alterarTasks(idTarefa, input)
+                }
+            })
+
+            var type = "question"; var novaCor = "#2dd284"; colorBgCuteAlert (type, novaCor)
+        }
+    })
 
     cancelarEdicao.addEventListener('click', () => {resetaLi(input, concluirEdicao, cancelarEdicao, li, nomeTarefa, campoTexto)})
+}
+
+function colorBgCuteAlert (type, novaCor) {
+    var alertHeader = document.getElementsByClassName(`${type}-bg`)[0];
+    alertHeader.style.background = novaCor
 }
 
 function resetaLi(input, concluirEdicao, cancelarEdicao, li, nomeTarefa, campoTexto) {
@@ -314,9 +402,7 @@ function resetaLi(input, concluirEdicao, cancelarEdicao, li, nomeTarefa, campoTe
 
 }
 
-function alterarTasks(idTarefa, input, nomeTarefa){
-
-    if (input.value != nomeTarefa && input.value != ""){
+function alterarTasks(idTarefa, input){
 
     var ID = parseInt(idTarefa)
 
@@ -349,7 +435,6 @@ function alterarTasks(idTarefa, input, nomeTarefa){
             alert("erro no servidor, tente novamente")
         }
         })
-    } else {alert('altere o nome da tarefa para validar')}
 }
 
 }
