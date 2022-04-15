@@ -1,3 +1,4 @@
+
 var tokenDoUsuario = localStorage.getItem("@TOKEN")
 
 var documento = document.body
@@ -453,3 +454,6 @@ function elementoSmallErro(elementoRecebido) {
     elementoRecebido.style.fontSize = "8";
     elementoRecebido.style.fontWeight = "bold";
 }
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+

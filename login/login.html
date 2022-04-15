@@ -1,46 +1,67 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
-  <title>Formulário de Login</title>
-  <link rel="stylesheet" href="../globalassets/css/style.css">
+<title>Animated Login Form</title>
+<link rel="stylesheet" href="../globalassets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-
 <body>
-  <main class="container">
 
-    <h1>To-Do App </h1>
-    <h2>Acessar</h2>
+<div class="bemvindo"><h2 class="title">Bem Vindo</h2></div>
+  
 
-    <form id="formLogin" action="">
+          
+         
+        
 
-      <div class="input-field">
-        <input type="email" id="InputEmail1" required aria-describedby="emailHelp" placeholder="Seu email">
-        <small id="inputEmailValidacao"></small>
-        <div class="underline"></div>
-      </div>
 
-      <div class="input-field">
-        <input type="password" name="password" id="password" required placeholder="Insira sua senha">
-        <small id="inputPasswordValidacao"></small>
-        <div class="underline"></div>
-        <div class="underline"></div>
-      </div>
+	<img class="wave" src="/globalassets/img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="/globalassets/img/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="index.html">
+       <div class="social_icon"> 
+         <div class="social"><h3>Sign In</h3></div>
       
-      <div class="botao">
-        <small id="loginValidacao"></small>
-        <button type="submit" id="buttonAccess" class="textoBotao">acessar</button>
-      </div>
-    </form>
-
-    <div class="footer">
-      <div><a href="../cadastro/cadastro.html">Não possui conta? Crie agora mesmo</a></div>
+            <span><i class="fab fa-facebook-square"></i></span>
+            <span><i class="fab fa-google-plus-square"></i></span>
+            <span><i class="fab fa-twitter-square"></i></span>
+          </div>
+          <div class="todo"><h1>To-Do App </h1></div>
+          
+  
+				<h2 class="title">Acessar</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Digite o seu email</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Digite sua senha</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            
+            	<input type="submit" class="btn" value="Login">
+              <a class="link" href="/cadastro/cadastro.html">Não possui conta? Crie agora mesmo</a>
+            </form>
+        </div>
     </div>
-  </main>
 
   <script type="text/javascript" src="./assets/js/login.js" defer></script>
+  <script type="text/javascript" src="assets/js/stylelogin.js" defer></script>
 
 </body>
 </html>
