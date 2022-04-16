@@ -36,7 +36,7 @@ function cadastroSucesso() {
         buttonText: "okay"
     })
     var botao = document.getElementsByClassName('alert-button')
-    botao[0].addEventListener('click', () => {window.location.pathname = "/front2-checkpoint2/login/login.html"})
+    botao[0].addEventListener('click', () => {window.location.assign("../login/login.html")})
 }
 
 function cadastroErro(error) {
@@ -46,9 +46,14 @@ function cadastroErro(error) {
 
 botaoCriarConta.addEventListener('click', evento => {
 
+    campoEmailLoginNormalizado = campoEmailCadastro.value.trim()
+    console.log(campoEmailLoginNormalizado)
+    campoEmailLoginNormalizado = campoEmailLoginNormalizado.toLowerCase()
+    console.log(campoEmailLoginNormalizado)
+
     evento.preventDefault();
     var senhaValidada = validatePassword()
-    var emailValidado = validaEmailRecebido(campoEmailCadastro.value);
+    var emailValidado = validaEmailRecebido(campoEmailLoginNormalizado);
 
     if (campoNomeCadastro.value != "" && campoSobrenomeCadastro.value != "" &&
         campoEmailCadastro.value != "" && campoSenhaCadastro.value != "" &&
@@ -76,7 +81,7 @@ botaoCriarConta.addEventListener('click', evento => {
 
         usuarioObjetoCadastro.firstName = campoNomeCadastro.value;
         usuarioObjetoCadastro.lastName = campoSobrenomeCadastro.value;
-        usuarioObjetoCadastro.email = campoEmailCadastro.value;
+        usuarioObjetoCadastro.email = campoEmailLoginNormalizado;
         usuarioObjetoCadastro.password = campoSenhaCadastro.value;
 
         let objetoUsuarioCadastroJson = JSON.stringify(usuarioObjetoCadastro);
@@ -122,7 +127,7 @@ botaoCriarConta.addEventListener('click', evento => {
                 botao2.innerHTML = 'fazer login'
 
                 alertBody[0].appendChild(botao2)
-                botao2.addEventListener('click', () => {window.location.pathname = "/front2-checkpoint2/login/login.html"})
+                botao2.addEventListener('click', () => {window.location.assign("../login/login.html")})
                 campoEmailCadastro.value = ""
             }
 
@@ -144,3 +149,5 @@ botaoCriarConta.addEventListener('click', evento => {
           return
     }
 });
+
+window
