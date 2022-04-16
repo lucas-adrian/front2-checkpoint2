@@ -8,38 +8,58 @@
   <link rel="stylesheet" href="../globalassets/css/style.css">
   <link rel="stylesheet" href="../globalassets/cute-alert-master/cute-alert.css">
 </head>
-
 <body>
-  <main class="container">
 
-    <h1>to-do app </h1>
-    <h2>login</h2>
+<div class="bemvindo"><h2 class="title">Bem Vindo</h2></div>
+  
 
-    <form id="formLogin" action="">
+          
+         
+        
 
-      <div class="input-field">
-        <input type="email" id="InputEmail" required aria-describedby="emailHelp" placeholder="seu email">
-        <small id="inputEmailValidacao"></small>
-        <div class="underline"></div>
-      </div>
 
-      <div class="input-field">
-        <input type="password" name="password" id="password" required placeholder="sua senha">
-        <small id="inputPasswordValidacao"></small>
-        <div class="underline"></div>
-
-      </div>
+	<img class="wave" src="/globalassets/img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="/globalassets/img/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="index.html">
+       <div class="social_icon"> 
+         <div class="social"><h3>Sign In</h3></div>
       
-      <div class="botao">
-        <small id="loginValidacao"></small>
-        <button type="submit" id="buttonAccess" class="textoBotao"></button>
-      </div>
-    </form>
-
-    <div class="footer">
-      <div><a href="../cadastro/cadastro.html">criar conta</a></div>
+            <span><i class="fab fa-facebook-square"></i></span>
+            <span><i class="fab fa-google-plus-square"></i></span>
+            <span><i class="fab fa-twitter-square"></i></span>
+          </div>
+          <div class="todo"><h1>To-Do App </h1></div>
+          
+  
+				<h2 class="title">Acessar</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Digite o seu email</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Digite sua senha</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            
+            	<input type="submit" class="btn" value="Login">
+              <a class="link" href="/cadastro/cadastro.html">Não possui conta? Crie agora mesmo</a>
+            </form>
+        </div>
     </div>
-  </main>
 
   <script type="text/javascript" src="./assets/js/login.js" defer></script>
   <script src="../globalassets/cute-alert-master/cute-alert.js"></script>
