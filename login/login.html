@@ -8,86 +8,56 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+  <header>
+    <div class="bemvindo"><h1 class="todo">Bem Vindo</h1></div>
+  </header>
 
-<<<<<<< HEAD
-<div class="bemvindo"><h2 class="title">Bem Vindo</h2></div>
+
   
-=======
-    <h1>to-do app </h1>
-    <h2>login</h2>
->>>>>>> 68f35272e083a1194a36ff65fe2633a048923984
-
-          
-         
-        
-
-<<<<<<< HEAD
-
 	<img class="wave" src="/globalassets/img/wave.png">
-	<div class="container">
+  
+	<div class="container login-container">
 		<div class="img">
 			<img src="/globalassets/img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
-       <div class="social_icon"> 
-         <div class="social"><h3>Sign In</h3></div>
-      
-            <span><i class="fab fa-facebook-square"></i></span>
-            <span><i class="fab fa-google-plus-square"></i></span>
-            <span><i class="fab fa-twitter-square"></i></span>
-          </div>
-          <div class="todo"><h1>To-Do App </h1></div>
-          
-  
-				<h2 class="title">Acessar</h2>
-           		<div class="input-div one">
+			<form id="formLogin" action="index.html">
+				<h2 class="title">To-Do App</h2>
+           		<div class="input-div input-field one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
            		   		<h5>Digite o seu email</h5>
-           		   		<input type="text" class="input">
+           		   		<input type="email" class="input" id="InputEmail1">
+                      <small id="inputEmailValidacao"></small>
            		   </div>
            		</div>
-           		<div class="input-div pass">
+           		<div class="input-div input-field pass">
            		   <div class="i"> 
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
            		    	<h5>Digite sua senha</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" class="input" id="password">
+                     <small id="inputPasswordValidacao"></small>
             	   </div>
             	</div>
             
-            	<input type="submit" class="btn" value="Login">
+            	<input type="submit" class="btn botao" value="Login">
+              <small id="loginValidacao"></small>
               <a class="link" href="/cadastro/cadastro.html">Não possui conta? Crie agora mesmo</a>
+              <div class="social_icon"> 
+                <div class="social"><h3>Sign In</h3></div>
+             
+                   <span><i class="fab fa-facebook-square"></i></span>
+                   <span><i class="fab fa-google-plus-square"></i></span>
+                   <span><i class="fab fa-twitter-square"></i></span>
+                 </div>
             </form>
         </div>
-=======
-      <div class="input-field">
-        <input type="email" id="InputEmail1" required aria-describedby="emailHelp" placeholder="seu email">
-        <small id="inputEmailValidacao"></small>
-        <div class="underline"></div>
-      </div>
-
-      <div class="input-field">
-        <input type="password" name="password" id="password" required placeholder="sua senha">
-        <small id="inputPasswordValidacao"></small>
-        <div class="underline"></div>
-
-      </div>
-      
-      <div class="botao">
-        <small id="loginValidacao"></small>
-        <button type="submit" id="buttonAccess" class="textoBotao"></button>
-      </div>
-    </form>
-
-    <div class="footer">
-      <div><a href="../cadastro/cadastro.html">criar conta</a></div>
->>>>>>> 68f35272e083a1194a36ff65fe2633a048923984
     </div>
+    
 
   <script type="text/javascript" src="./assets/js/login.js" defer></script>
   <script type="text/javascript" src="assets/js/stylelogin.js" defer></script>
