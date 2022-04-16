@@ -1,70 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 * {
   margin : 0;
   padding: 0;
   box-sizing:border-box;
-  -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 body {
-  /* background-image: radial-gradient(ellipsis sizing  40% #8257E5 40%,#D72891, #F1594B); */
+    background: linear-gradient(45deg, #088F8F, #9acd32);
     background-repeat: no-repeat;
-    background-color: #121214;
     min-height: 100vh;
     min-width: 100vw;
     align-items: center;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
-
- 
-
-  .main-header {
+  
+  header {
     display: flex;
     justify-content: space-between;
     color: rgb(0, 0, 0);
+    background-color: rgb(226, 235, 152);
     width: 100vw;
     margin: auto;
     font-weight: bold; 
     margin-bottom: 32px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-
   }
 
-  .div-logo-nlw {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 30px 0 10px 30px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: start;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.div-logo-nlw {
-  display: inline-block;
-  padding-bottom: 20px;
-}
-
   .tarefas {
-    font-size: 30px;
     margin-left: 30px;
     display: block;
-    /* width: fit-content; */
+    width: fit-content;
     padding: .7em 1em;
-    /* border-bottom: .2em solid rgb(14, 226, 31); */
+    border-bottom: .2em solid rgb(14, 226, 31);
     text-decoration: none;
     color: rgb(1, 1, 1)
   }
@@ -104,16 +70,7 @@ body {
     margin-bottom: 32px;
     padding: 12px 30px 12px 35px;
     border-radius: 5px;
-    border: 1px solid #29292e;
-    border-radius: 5px;
-    background-color: #202024;
-    font-family: Roboto,sans-serif;
-    color: #c4c4cc;
-    font-size: 16px;
-    line-height: 160%;
-    white-space: normal;
   }
-  
 
   .criar-tarefa p{
     display: flex;
@@ -124,11 +81,9 @@ body {
   .main-form {
     font-weight: bold;
     display: flex;
-    /* background-color: lightcyan; */
+    background-color: lightcyan;
     align-items: center;
     justify-content: space-between;
-
-    
   }
 
   .mf-div {
@@ -189,7 +144,6 @@ body {
     padding: 12px 30px 12px 35px;
     border-radius: 5px;
     list-style-type: none;
-    
   }
 
   .tpRight {
@@ -215,7 +169,6 @@ body {
     padding: 12px 30px 12px 35px;
     border-radius: 5px;
     list-style-type: none;
-    
   }
 
   #user-info {

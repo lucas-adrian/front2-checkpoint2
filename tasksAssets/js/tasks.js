@@ -13,7 +13,7 @@ function userNotFound() {
         message: "ocorreu um erro ao encontrar os dados do usúario, é necessario realizar o login novamente",
         buttonText: "okay"
     }).then(() => {
-        window.location.assign("../login/login.html")
+        window.location.assign("./login.html")
     })
 }
 
@@ -61,7 +61,7 @@ finalizarSessão.addEventListener('click', () => cuteAlert({
   }).then((e)=>{
     if(e == "confirm"){
         localStorage.clear()
-        window.location.assign("../login/login.html")
+        window.location.assign("./login.html")
     }
   })
   )}

@@ -6,6 +6,8 @@ var inputSenha = document.getElementById('password');
 var botaoLogin = document.getElementsByClassName('botao')
 var email;
 var senha;
+var t;
+var m;
 
 const BASE_URL_API = 'https://ctd-todo-api.herokuapp.com/v1';
 
@@ -26,7 +28,17 @@ function setWithExpiry(key, value, ttl) {
 		value: value,
 		expiry: now.getTime() + ttl,
 	}
+
 	localStorage.setItem(key, JSON.stringify(item))
+}
+
+function callCuteAlert(t, m) {
+    cuteAlert({
+        type: "error",
+        title: t,
+        message: m,
+        buttonText: "okay"
+    })
 }
 
 function login(e) {
@@ -34,22 +46,21 @@ function login(e) {
     e.preventDefault()
 
     email = emailNorm(inputEmail.value);
-    var emailValue = inputEmail.value
     senha = inputSenha.value;
 
     credenciais.email = email;
     credenciais.password = senha;
+
     var credString = JSON.stringify(credenciais)
+    var s;
 
     let configuracoesRequisicao = {
         method: 'POST',
         body: credString,
         headers: {
-        'Content-type': 'application/json'
-    }}
-
-    
-    var s;
+            'Content-type': 'application/json'
+        }
+    }
     
     fetch(`${BASE_URL_API}/users/login`, configuracoesRequisicao)
     .then(function (respostaDoServidor) {
@@ -64,54 +75,41 @@ function login(e) {
         var j = resposta.jwt
 
         if (inputEmail.value == "" || inputSenha.value == "") {
-            cuteAlert({
-                type: "error",
-                title: "dados incompletos",
-                message: "insira email e senha para fazer login",
-                buttonText: "okay"
-            })
+            t = "dados incompletos";
+            m = "insira email e senha para fazer login"
+            callCuteAlert(t, m)
             return
         }
 
         if (s == 201) {
             setWithExpiry("@TOKEN", j, 1200000)
-            window.location.assign("../tasks/tasks.html")
+            window.location.assign("./tasks.html")
             return
         }
 
         if (s == 400) {
             inputSenha.value = "";
-            cuteAlert({
-                type: "error",
-                title: "senha incorreta",
-                message: "reinsira a senha e tente novamente",
-                buttonText: "okay"
-            })
+            t = "senha incorreta";
+            m = "reinsira a senha e tente novamente"
+            callCuteAlert(t, m)
             return
         }
 
         if (s == 404) {
             inputEmail.value = "";
             inputSenha.value = "";
-            cuteAlert({
-                type: "error",
-                title: "email inexistente",
-                message: "reinsira seus dados e tente novamente",
-                buttonText: "okay"
-            })
+            t = "email inexistente";
+            m = "reinsira seus dados e tente novamente"
+            callCuteAlert(t, m)
             return
         }
 
         if (s == 500) {
             inputEmail.value = "";
             inputSenha.value = "";
-            cuteAlert({
-                type: "error",
-                title: "erro no servidor",
-                message: "tivemos problemas na conexão com o servidor, tente novamente",
-                buttonText: "okay"
-            })
-            return
+            t = "erro no servidor";
+            m = "tivemos problemas na conexão com o servidor, tente novamente"
+            callCuteAlert(t, m)
         }
     });
 }
