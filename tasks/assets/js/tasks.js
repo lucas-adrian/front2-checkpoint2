@@ -1,19 +1,57 @@
-
-var tokenDoUsuario = localStorage.getItem("@TOKEN")
-
 var documento = document.body
+
+function userNotFound() {
+    localStorage.clear()
+
+    while (documento.children.length > 2) {
+        documento.removeChild(documento.lastChild);
+    }
+
+    cuteAlert({
+        type: "error",
+        title: "usuário não encontrado :(",
+        message: "ocorreu um erro ao encontrar os dados do usúario, é necessario realizar o login novamente",
+        buttonText: "okay"
+    }).then(() => {
+        window.location.assign("../login/login.html")
+    })
+}
+
+function getWithExpiry(key) {
+	const itemStr = localStorage.getItem(key)
+
+	if (!itemStr) {
+		userNotFound() 
+        return null
+	}
+
+	const item = JSON.parse(itemStr)
+	const now = new Date()
+
+    if (!!itemStr){
+	if (now.getTime() > item.expiry) {
+        userNotFound()
+		return null
+	}
+	return item.value
+}}
+
+var tokenDoUsuario = getWithExpiry("@TOKEN");
+
 var tarefasPendentesUL = document.getElementsByClassName('tpul')
 var tarefasTerminadasUL = document.getElementsByClassName('ttul')
 var botao = document.getElementById('criarTarefa')
-botao.style.cursor = "pointer"
+if (!!botao) {botao.style.cursor = "pointer"}
 var user = document.getElementById('user-info')
 var finalizarSessão = document.getElementById('exit')
+var a;
 
 var iconeCriarTarefa = `<svg width="33px" height="33px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4 24L9 19L19 29L39 9L44 14L19 39L4 24Z" fill="green" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
 var iconeAtualizarTarefa = `<svg width="30px" height="30px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M36.7279 36.7279C33.4706 39.9853 28.9706 42 24 42C14.0589 42 6 33.9411 6 24C6 14.0589 14.0589 6 24 6C28.9706 6 33.4706 8.01472 36.7279 11.2721C38.3859 12.9301 42 17 42 17" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M36.7279 36.7279C33.4706 39.9853 28.9706 42 24 42C14.0589 42 6 33.9411 6 24C6 14.0589 14.0589 6 24 6C28.9706 6 33.4706 8.01472 36.7279 11.2721C38.3859 12.9301 42 17 42 17" stroke="green" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 8V17H33" fill="green" stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>`
 var iconeDeletarTarefa = `<svg width="30px" height="40px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M33 6H44L15 42H4L33 6Z" fill="red" stroke="black" stroke-width="2" stroke-linejoin="round"/><path d="M15 6H4L33 42H44L15 6Z" fill="red" stroke="black" stroke-width="2" stroke-linejoin="round"/></svg>`
 var iconeEditarTarefa = `<svg width="30px" height="30px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M42 26V40C42 41.1046 41.1046 42 40 42H8C6.89543 42 6 41.1046 6 40V8C6 6.89543 6.89543 6 8 6L22 6" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 26.7199V34H21.3172L42 13.3081L34.6951 6L14 26.7199Z" fill="green" stroke="black" stroke-width="4" stroke-linejoin="round"/></svg>`
 
+if (!!finalizarSessão) {
 finalizarSessão.addEventListener('click', () => cuteAlert({
     type: "question",
     title: "gostaria de finalizar sessão?",
@@ -23,10 +61,10 @@ finalizarSessão.addEventListener('click', () => cuteAlert({
   }).then((e)=>{
     if(e == "confirm"){
         localStorage.clear()
-        window.location.pathname = "front2-checkpoint2/login/login.html"
+        window.location.assign("../login/login.html")
     }
   })
-  )
+  )}
 
 
 const bodyObject = {
@@ -34,19 +72,37 @@ const bodyObject = {
     completed: false
   }
 
+var nomeTarefa = document.getElementById('new-task');
+
+//seção criar a tarefa
+if (!!nomeTarefa) {
+nomeTarefa.addEventListener('keypress', (key) => {
+    if (key.key == "Enter"){
+        key.preventDefault()
+        criarTask()
+    }
+})}
+
+if (!!botao) {
 botao.addEventListener('click', (evento) => {
     evento.preventDefault();
+    criarTask()
+})}
 
-    var nomeTarefa = document.getElementById('new-task').value
+function criarTask() {
+    var taskName = nomeTarefa.value
+    var taskNameBOLD = taskName.bold()
     var check = document.getElementById('i')
 
-    if (!!nomeTarefa) {
-       bodyObject.description = nomeTarefa;
-       nomeTarefa = "";
+    if (!!taskName) {
+       bodyObject.description = taskName;
     } else {
-        let inputNovaTarefa = document.getElementById("new-task");
-        elementoSmallErro(inputNovaTarefa)
-        inputNovaTarefa.innerText = "Campo obrigatorio";
+        cuteAlert({
+            type: "error",
+            title: "criação negada",
+            message: "escreva o nome da tarefa antes de concluir",
+            buttonText: "okay"
+        })
         return
     }
 
@@ -59,16 +115,16 @@ botao.addEventListener('click', (evento) => {
     cuteAlert({
         type: "question",
         title: "confirmar criação?",
-        message: `objetivo: ${bodyObject.description}`,
+        message: `objetivo: ${taskNameBOLD}`,
         confirmText: "okay",
         cancelText: "nope"
       }).then((e)=>{
         if(e == "confirm"){
             criarNovaTarefa()
-        } else {evento.path[1][0].value = ""}
+        } else {nomeTarefa.value = "";}
       })
-})
-
+}
+//seção criar a tarefa//
 
 const BASE_URL_API = 'https://ctd-todo-api.herokuapp.com/v1';
 
@@ -79,11 +135,13 @@ const ListaDeTarefas = {
     email: ''
 }
 
+if (!!botao) {
 pedirInformacoesDoUsuario()
-pedirListaDeTarefasUsuario()
+pedirListaDeTarefasUsuario()}
 
 function pedirInformacoesDoUsuario() {
 
+    tokenDoUsuario = getWithExpiry("@TOKEN");
     // Configurações da requisição GET.
     let configuracoesRequisicao = {
         method: 'GET',
@@ -110,6 +168,7 @@ function pedirInformacoesDoUsuario() {
 
 function pedirListaDeTarefasUsuario() {
 
+    tokenDoUsuario = getWithExpiry("@TOKEN");
     // Configurações da requisição GET.
     let configuracoesRequisicao = {
         method: 'GET',
@@ -135,8 +194,6 @@ function pedirListaDeTarefasUsuario() {
                 // console.log(respostaDoServidorEmJSON)
                 var arrayTarefas = respostaDoServidorEmJSON
                 arrayTarefas.forEach(e => {
-
-
 
                     var date = e.createdAt
                     var YYYY = date.substr(0, 4)
@@ -183,7 +240,7 @@ function carregarTarefas(b,c,d,e){
 
     var excluirTask = document.createElement('div');
     excluirTask.innerHTML = iconeDeletarTarefa
-    p2.id = "taskName"
+    p2.id = `task${e}`
     p3.id = "created"
 
     right.appendChild(editarTask)
@@ -210,12 +267,44 @@ function carregarTarefas(b,c,d,e){
         tarefasTerminadasUL[0].appendChild(li)
         editarTask.style.cursor = 'pointer'
         excluirTask.style.cursor = 'pointer'
-        excluirTask.addEventListener('click', () => {deletarTarefa(id)})
-        editarTask.addEventListener('click', () => {refazerTarefa(id)})
+        excluirTask.addEventListener('click', () => {
+            
+            var aux = elementosLi.p2.innerText
+            var textoTarefaBOLD = aux.bold()
+
+            cuteAlert({
+                type: "question",
+                title: "deletar objetivo",
+                message: `deletar a tarefa: ${textoTarefaBOLD}?`,
+                confirmText: "yes",
+                cancelText: "nope"
+              }).then((e)=>{
+                if(e == "confirm"){
+                    deletarTarefa(id)
+                }
+              })
+              var type = "question"; var novaCor = "#d85261"; colorBgCuteAlert (type, novaCor)
+        })
+        editarTask.addEventListener('click', () => {
+
+            var aux = elementosLi.p2.innerText
+            var textoTarefaBOLD = aux.bold()
+
+            cuteAlert({
+                type: "question",
+                title: "refazer tarefa",
+                message: `você quer refazer a tarefa: ${textoTarefaBOLD}?`,
+                confirmText: "yes",
+                cancelText: "nope"
+              }).then((e)=>{
+                if(e == "confirm"){
+                    refazerTarefa(id)
+                }
+              })})
     } else {
         var id = li.classList[0]
         tarefasPendentesUL[0].appendChild(li)
-        var campoTexto = document.getElementById('taskName')
+        var campoTexto = document.getElementById(`task${e}`)
         tarefaConcluida.style.cursor = 'pointer'
         editarTask.style.cursor = 'pointer'
         excluirTask.style.cursor = 'pointer'
@@ -252,13 +341,11 @@ function carregarTarefas(b,c,d,e){
                 confirmText: "yes",
                 cancelText: "nope"
               }).then((e)=>{
-                  
-
-                  
                 if(e == "confirm"){
                     deletarTarefa(id)
                 }
               })
+              var type = "question"; var novaCor = "#d85261"; colorBgCuteAlert (type, novaCor)
         })
 
         editarTask.addEventListener('click', () => {editarTarefa(id, campoTexto, li)})
@@ -278,6 +365,8 @@ function refazerTarefa(idTarefa){
     }
 
     var bodyObjectEmJson = JSON.stringify(bodyObject)
+
+    tokenDoUsuario = getWithExpiry("@TOKEN");
 
     let configuracoesRequisicao = {
         method: 'PUT',
@@ -299,13 +388,13 @@ function refazerTarefa(idTarefa){
             window.location.reload()
         }
         if (status == 500) {
-            alert("erro no servidor, tente novamente")
+            erroServidor()
         }
         })
 
 }
 
-function editarTarefa(idTarefa, campoTexto,li) {
+function editarTarefa(idTarefa, campoTexto ,li) {
 
     var aux = elementosLi.p2.innerText
     var textoTarefaBOLD = aux.bold()
@@ -411,6 +500,8 @@ function alterarTasks(idTarefa, input){
         completed: false
     }
 
+    tokenDoUsuario = getWithExpiry("@TOKEN");
+
     var bodyObjectEmJson = JSON.stringify(bodyObject)
 
     let configuracoesRequisicao = {
@@ -432,7 +523,7 @@ function alterarTasks(idTarefa, input){
         if (status == 200) {
             window.location.reload()}
         if (status == 500) {
-            alert("erro no servidor, tente novamente")
+            erroServidor()
         }
         })
 }
@@ -442,6 +533,8 @@ function alterarTasks(idTarefa, input){
 function deletarTarefa(idTarefa){
 
     var ID = parseInt(idTarefa)
+
+    tokenDoUsuario = getWithExpiry("@TOKEN");
 
     let configuracoesRequisicao = {
         method: 'DELETE',
@@ -461,7 +554,7 @@ function deletarTarefa(idTarefa){
         if (status == 200) {
             window.location.reload()}
         if (status == 500) {
-            alert("erro no servidor, tente novamente")
+            erroServidor()
         }
     })
 }
@@ -482,6 +575,8 @@ function tarefaPronta(idTarefa){
 
     var bodyObjectEmJson = JSON.stringify(bodyObject)
 
+    tokenDoUsuario = getWithExpiry("@TOKEN");
+
     let configuracoesRequisicao = {
         method: 'PUT',
         body: bodyObjectEmJson,
@@ -501,7 +596,7 @@ function tarefaPronta(idTarefa){
         if (status == 200) {
             window.location.reload()}
         if (status == 500) {
-            alert("erro no servidor, tente novamente")
+            erroServidor()
         }
         })
 
@@ -510,6 +605,8 @@ function tarefaPronta(idTarefa){
 function criarNovaTarefa() {
 
     let bodyObjectEmJson = JSON.stringify(bodyObject);
+
+    tokenDoUsuario = getWithExpiry("@TOKEN");
 
     let configuracoesRequisicao = {
         method: 'POST',
@@ -523,14 +620,26 @@ function criarNovaTarefa() {
     fetch(`${BASE_URL_API}/tasks`, configuracoesRequisicao)
     .then(function (respostaDoServidor) {
 
-        // Retorno apenas dos dados convertidos em JSON.
-        let JSON = respostaDoServidor.json();
-
-        // Retorno da promessa convertida em JSON.
-        return JSON;
+        var status = respostaDoServidor.status
+        
+        return status;
     })
-    .then(function () {
-        document.location.reload()
+    .then((status) => {
+        if (status == 201) {
+            document.location.reload()
+        }
+        if (status == 500) {
+            erroServidor()
+        }
+    })
+}
+
+function erroServidor() {
+    cuteAlert({
+        type: "error",
+        title: "erro de contato ao servidor",
+        message: "tente novamente em momentos",
+        buttonText: "okay"
     })
 }
 
@@ -539,6 +648,3 @@ function elementoSmallErro(elementoRecebido) {
     elementoRecebido.style.fontSize = "8";
     elementoRecebido.style.fontWeight = "bold";
 }
-
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-
