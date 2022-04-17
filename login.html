@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Login</title>
+  <link rel="stylesheet" href="./loginAssets/css/style.css">
+  <link rel="stylesheet" href="./globalassets/cute-alert-master/cute-alert.css">
+  <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./loginAssets/js/login.js" defer></script>
+  <script src="./globalassets/cute-alert-master/cute-alert.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="bemvindo"><h1 class="todo">Bem Vindo</h1></div>
+  </header>
+
+	<img class="wave" src="./globalassets/img/wave.png">
+  
+	<div class="container login-container">
+
+		<div class="img">
+			<img src="./globalassets/img/bg.svg">
+		</div>
+
+		<div class="login-content">
+			<form id="formLogin" action="index.html">
+				<h2 class="title">To-Do App</h2>
+           		<div class="input-div input-field one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<input type="email" class="input" id="InputEmail" placeholder="Digite o seu email">
+                      <small id="inputEmailValidacao"></small>
+           		   </div>
+           		</div>
+           		<div class="input-div input-field pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<input type="password" class="input" id="password" placeholder="Digite sua senha">
+                     <small id="inputPasswordValidacao"></small>
+            	   </div>
+            	</div>
+            
+            	<input type="submit" class="btn botao" value="Login">
+              	<small id="loginValidacao"></small>
+
+            	<a class="link" href="./cadastro.html">Não possui conta? Crie agora mesmo</a>
+			</form>
+        </div>
+    </div>
+</body>
+</html>

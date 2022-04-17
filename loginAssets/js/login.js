@@ -61,7 +61,7 @@ function login(e) {
     }) 
     .then((resposta) => {
 
-        var j = resposta.jwt
+        var jwt = resposta.jwt
 
         if (inputEmail.value == "" || inputSenha.value == "") {
             cuteAlert({
@@ -74,8 +74,8 @@ function login(e) {
         }
 
         if (s == 201) {
-            setWithExpiry("@TOKEN", j, 1200000)
-            window.location.assign("../tasks/tasks.html")
+            setWithExpiry("@TOKEN", jwt, 1200000)
+            window.location.assign("./tasks.html")
             return
         }
 
