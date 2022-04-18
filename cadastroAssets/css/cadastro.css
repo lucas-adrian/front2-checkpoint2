@@ -12,70 +12,53 @@ body {
   display: flex;
 }
 
-header {
-  position: absolute;
-  height: 50px;
-  width: 100%;
-}
-
-.bemvindo {
-  position: relative;
-  display: flex;
-}
-
-.todo  {
-  color: #38d39f;
-  margin: 30px 0 0 600px;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
+form {
+  width: 360px;
 }
 
 .wave {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   height: 100%;
   z-index: -1;
+}
+
+.inverter {
+  transform: scaleX(-1);
 }
 
 .container {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1fr, 2);
   grid-gap: 7rem;
   padding: 0 2rem;
 }
 
-.img {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 .login-content {
+  position: fixed;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: left;
   text-align: center;
+  left: -150px;
+} 
+
+.cadastro-img {
+  position: relative;
+  display: flex;
+  right: -800px;
+  top: -150;
 }
 
-.img img {
-  width: 500px;
-}
-
-form {
-  width: 360px;
-  
-}
-
-.login-content img {
-  height: 100px;
+.img-form {
+  width: 300px;
 }
 
 .login-content h2 {
-  margin: 30px 0;
+  top: 50px;
+  margin: 80px 0 30px 0;
   color: #38d39f;
   font-size: 1.8rem;
   font-weight: bold;
@@ -84,30 +67,20 @@ form {
 .login-content .input-div {
   position: relative;
   display: grid;
-  grid-template-columns: 7% 93%;
-  margin: 25px 0;
+  grid-template-columns: 93% 7%;
+  margin: 30px 0 10px 0;
   padding: 5px 0;
   border-bottom: 2px solid #d9d9d9;
 }
 
 .login-content .input-div.one {
-  margin-top: 0;
-}
-
-.i {
-  color: #d9d9d9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.i i {
-  transition: 0.3s;
+  margin-top: 0px;
 }
 
 .input-div > div {
   position: relative;
-  height: 45px;
+  height: 10px;
+  margin-bottom: 10px;
 }
 
 .input-div > div > h5 {
@@ -116,8 +89,9 @@ form {
   top: 50%;
   transform: translateY(-50%);
   color: #999;
-  font-size: 18px;
+  font-size: 16px;
   transition: 0.3s;
+  padding-bottom: 15px;
 }
 
 .input-div:before,
@@ -147,6 +121,7 @@ form {
 .input-div.focus > div > h5 {
   top: -5px;
   font-size: 15px;
+  color: #38d39f;
 }
 
 .input-div.focus > .i > i {
@@ -162,14 +137,14 @@ form {
   border: none;
   outline: none;
   background: none;
-  padding: 0.5rem 0.7rem;
+  padding: 0.7rem 0.7rem;
   font-size: 1.2rem;
   color: #555;
   font-family: 'Roboto', sans-serif;;
 }
 
 .input-div.pass {
-  margin-bottom: 4px;
+  margin-bottom: 50px;
 }
 
 .link {
@@ -206,72 +181,3 @@ form {
   background-position: right;
 }
 
-
-.social_icon span {
-  font-size: 40px;
-  margin: 10px 0 0 0;
-  margin-left: 10px;
-  color: #38d39f;
-  
-}
-
-.social_icon span:hover {
-  color:#999;
-  cursor: pointer;
-}
-
-.social h3 {
-  color: #38d39f;
-  margin: 20px 0 0 0;
-  margin-right: 10px;
-  font-size: 1.5rem;
-
-
-
-}
-
-.social_icon {
-  position: absolute;
-  display: flex;
-  margin: 15px 0;
- 
-}
-
-@media screen and (max-width: 1050px) {
-  .container {
-    grid-gap: 5rem;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  form {
-    width: 290px;
-  }
-
-  .login-content h2 {
-    font-size: 1.4rem;
-    margin: 8px 0;
-  }
-
-  .img img {
-    width: 400px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .img {
-    display: none;
-  }
-
-  .wave {
-    display: none;
-  }
-
-  .login-content {
-    justify-content: center;
-  }
-}

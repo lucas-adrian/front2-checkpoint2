@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Cadastro</title>
-    <!-- linkar o css do cadastro aqui em baixo -->
-    <!-- <link rel="stylesheet" href=""> -->
-    <link rel="stylesheet" href="./globalassets/cute-alert-master/cute-alert.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./cadastroAssets/css/cadastro.css" />
+    <link rel="stylesheet" href="./globalassets/cute-alert-master/cute-alert.css"/>
     <script type="text/javascript" src="./cadastroAssets/js/cadastro.js" defer></script>
     <script src="./globalassets/cute-alert-master/cute-alert.js" defer></script>
-</head>
+  </head>
 
-<body>
-    <main class="container">
+  <body>
 
-      <h1>to-do app </h1>
+    <img class="wave inverter" src="./globalassets/img/wave.png" />
+    
+    <main class="container login-content">
 
-      <h2>cadastro</h2>
-
-      <form id="main-form">
-        <div class="input-field">
-          <input type="name"  id="InputName"  aria-describedby="nameHelp" placeholder="seu nome">
-          <div class="underline"></div>
-        </div>
-
-        <div class="input-field">
-          <input type="name"  id="InputSobrenome"  aria-describedby="sobrenomeHelp" placeholder="seu sobrenome">
-          <div class="underline"></div>
-        </div>
-
-        <div class="input-field">
-          <input type="email"  id="InputEmail" aria-describedby="emailHelp" placeholder="seu email">
-          <div class="underline"></div>
-        </div>
-
-        <div class="input-field">
-          <input type="password" name="password" id="password" placeholder="sua senha">
-          <div class="underline"></div>
-        </div>
-
-        <div class="input-field">
-          <input type="password" name="password2" id="confirm_password" placeholder="confirme sua senha">
-          <div class="underline"></div>
-        </div>
-
-        <button class="botao" id="criarContaCadastro" type="submit">criar conta</button>
-
-      </form>
-
-      <div class="footer">
-        <p>já possui conta?</p>
-        <a href="./login.html"> login</a>
+      <div class="cadastro-img">
+        <img class="img-form inverter" src="./globalassets/img/undraw_pending_approval_xuu9.svg"/>
       </div>
 
+      <form  id="main-form" autocomplete="off">
+        <h2 class="title">To-Do App</h2>
+        <div class="input-field input-div one pass">
+          <div class="div">
+            <h5>Digite seu nome</h5>
+            <input class="input" type="name" id="InputName" aria-describedby="nameHelp"/>
+            <div class="underline"></div>
+          </div>
+        </div>
+
+        <div class="input-field input-div pass">
+          <div class="div">
+            <h5>Digite seu sobrenome</h5>
+            <input class="input" type="name" id="InputSobrenome" aria-describedby="sobrenomeHelp"/>
+            <div class="underline"></div>
+          </div>
+        </div>
+
+        <div class="input-field input-div pass">
+          <div class="div">
+            <h5>Digite seu email</h5>
+            <input class="input" type="email" id="InputEmail" aria-describedby="emailHelp"/>
+            <div class="underline"></div>
+          </div>
+        </div>
+
+        <div class="input-field input-div pass">
+          <div class="div">
+            <h5>Digite sua senha</h5>
+            <input class="input" type="password" name="password" id="password"/>
+            <div class="underline"></div>
+          </div>
+        </div>
+
+        <div class="input-field input-div pass">
+          <div class="div">
+            <h5>Digite novamente sua senha</h5>
+            <input class="input" type="password" name="password2" id="confirm_password"/>
+            <div class="underline"></div>
+          </div>
+        </div>
+
+        <button class="botao btn" id="criarContaCadastro" type="submit">Criar conta</button>
+
+        <div class="footer">
+          <a class="link" href="./login.html">Já possui conta? Login</a>
+        </div>
+
+      </form>
     </main>
-</body>
+  </body>
 </html>
