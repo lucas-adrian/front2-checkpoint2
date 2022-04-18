@@ -6,86 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./tasksAssets/css/tasks.css">
     <link rel="stylesheet" href="./globalassets/cute-alert-master/cute-alert.css">
-    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous" defer></script>
+    <script src="./globalassets/cute-alert-master/cute-alert.js"></script>
     <script type="text/javascript" src="./tasksAssets/js/tasks.js" defer></script>
-    <script src="./globalassets/cute-alert-master/cute-alert.js" defer></script>
     <title>To-Do</title>
 </head>
 <body>
   
-      <header class="main-header">
-        <div class="div-logo-nlw">
-          <div class="logo-svg-nlw w-embed">
-            <svg width="288" height="60" viewBox="0 0 288 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M70.2908 12.5654C72.0888 14.5751 73.0342 17.2247 72.9218 19.9388V34.7334H66.6168V21.2999C66.6796 19.7998 66.201 18.3282 65.271 17.1618C64.8387 16.6485 64.2972 16.242 63.6875 15.973C63.0777 15.704 62.4158 15.5795 61.7517 15.6091C57.8175 15.6091 55.8504 18.3975 55.8504 23.9743V34.7334H49.5117V10.445H55.8504V12.6406C56.8431 11.6593 58.0222 10.8942 59.3157 10.3921C60.6093 9.88988 61.99 9.66119 63.3734 9.71997C64.659 9.66845 65.9406 9.89552 67.1333 10.3861C68.3259 10.8767 69.4022 11.6195 70.2908 12.5654V12.5654Z" fill="red">
-              </path>
-
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M80.9688 0V34.7329H87.2873V0H80.9688Z" fill="white">
-              </path>
-
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M123.004 34.7328H117.755L112.588 20.4238L107.366 34.7328H102.077L93.2148 10.3965H99.9438L104.97 24.9518L110.105 10.3965H115.03L120.164 24.9996L125.144 10.3965H131.873L123.004 34.7328Z" fill="white">
-              </path>
-              <path d="M37.1282 35.3486L27.9028 41.6071L7.16406 30.3418L16.2549 24.1859L26.0456 29.5073C26.0456 27.3801 26.0456 22.2023 26.0456 17.5512L37.1147 10.0273C37.1147 14.6511 37.1147 26.1284 37.1282 35.3486Z" fill="#8257E5"></path>
-              <path d="M20.1869 21.5788L10.0935 16.1069C10.0935 18.2888 10.0935 23.6991 10.0935 28.4187C5.86766 31.2983 2.08598 33.8564 0 35.2585C0 30.5732 0 18.8428 0 9.57478L8.91589 3.52148L29.9641 14.9578L20.1869 21.5788Z" fill="#8257E5"></path>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M190.974 25.6207V2.58398H196.6V11.0039H208.665V16.1954H196.6V25.6207C196.6 28.7944 198.208 30.0393 200.53 30.0393C202.851 30.0393 204.453 28.8423 204.453 25.6207V24.9914H210.085V25.6207C210.085 32.2075 206.202 35.3812 200.53 35.3812C194.857 35.3812 190.974 32.2075 190.974 25.6207ZM149.914 10.3746C143.818 10.3746 139.652 13.7877 139.652 20.9559L139.666 34.7519H145.291V20.9627C145.291 17.0914 147.182 15.7234 149.927 15.7234C152.673 15.7234 154.564 17.1119 154.564 20.9627V21.2021H160.149V21.0517C160.149 13.7877 156.01 10.3746 149.914 10.3746ZM174.798 10.3746C167.417 10.3746 162.215 15.6618 162.215 22.8779C162.215 30.094 167.417 35.3812 174.798 35.3812C180.33 35.3812 184.589 32.4469 186.339 27.9257H180.33C179.145 29.4647 177.302 30.1829 174.798 30.1829C171.494 30.1829 168.884 28.3567 168.13 24.8957H187.287V22.8779C187.287 15.6618 182.18 10.3746 174.798 10.3746ZM174.798 15.5387C177.874 15.5387 180.424 17.1529 181.326 20.3266H168.271C169.166 17.1734 171.723 15.5387 174.798 15.5387ZM213.677 11.0047V23.3575C213.677 31.3397 218.313 35.382 225.217 35.382C232.121 35.382 236.757 31.2918 236.757 23.3575V11.0047H231.132V23.3575C231.132 27.8787 228.763 30.0401 225.217 30.0401C221.671 30.0401 219.302 27.8787 219.302 23.3575V11.0047H213.677ZM241.394 20.9559C241.394 13.7877 245.559 10.3746 251.656 10.3746C257.752 10.3746 261.877 13.7945 261.877 21.0517V21.2021H256.292V20.9627C256.292 17.0982 254.401 15.7302 251.663 15.7302C248.924 15.7302 247.026 17.0982 247.026 20.9696V34.7519H241.401L241.394 20.9559ZM276.446 10.3746C269.535 10.3746 264.899 14.4649 264.899 22.3991L264.872 34.7519H270.504V22.3991C270.504 17.878 272.913 15.7166 276.459 15.7166C280.006 15.7166 282.368 17.878 282.368 22.3991V34.7518H282.362V38.5479C282.368 39.602 282.169 40.647 281.777 41.623C281.385 42.5989 280.808 43.4866 280.078 44.2352C279.347 44.9837 278.479 45.5784 277.522 45.9851C276.566 46.3918 275.539 46.6026 274.502 46.6053H255.9L260.088 42.3437L256.509 38.7049L247.828 47.5283V51.174L256.509 59.9974L260.088 56.3518L256.068 52.2687H274.482C278.064 52.2705 281.501 50.8262 284.036 48.2532C286.571 45.6803 287.997 42.1893 288.001 38.5479V34.7518H288V22.3991C288 14.417 283.357 10.3746 276.446 10.3746Z" fill="url(#paint0_linear_7098_16311)"></path>
-              <defs>
-              <linearGradient id="paint0_linear_7098_16311" x1="143.952" y1="49.3479" x2="284.448" y2="49.3479" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#8257E5"></stop>
-              <stop offset="0.53" stop-color="#D72891"></stop>
-              <stop offset="1" stop-color="#F1594B"></stop>
-              </linearGradient>
-              </defs>
-          </svg>
+      <header class="main-header">    
+        <div class="logo">
+          <img src="./globalassets/img/todo-list-icon-1.jpg">
         </div>
-      </div>
-      
-        <nav>
-          <a href="#" class="tarefas">To-Do</a>
-        </nav>
+
+        <div class="title-todo">
+        <h1><span>To-Do</span> A sua lista de tarefas</h1>
+        </div>
+
         
+        <p id="user-info"></p>
         <div class="right-header">
-          <p id="user-info"></p>
-          <button class="closeApp" id='exit'>finalizar sessão</button>
-        </div>
-      
-      </header>
-    
+          
+          <a class="closeApp link input-div focus" id='exit'>finalizar sessão</a>
+        </div> 
 
-        <div class="criar-tarefa">
-          <p>Adicionar nova tarefa:</p>
+        <div class="avatar"><img src="./globalassets/img/avatar.svg" alt="avatar">
+        </div>    
+      </header>
+
+  <div class="img">
+    <img src="./globalassets/img/undraw_to_do_list_re_9nt7.svg">
+  </div>
+
+        <div class="criar-tarefa input-div div focus">
+          <h5>Adicionar nova tarefa:</h5>
           <form class="main-form">
-            <input id="new-task" type="text" placeholder="nome da tarefa" class="new-task" autocomplete="off">
+            <input id="new-task" type="text" placeholder="nome da tarefa" class="new-task input pass" autocomplete="off">
+            
             <div class="mf-div">
-              <input type="radio" name="grupoRadio" id="i" checked><p>Pendente</p>
-              <input type="radio" name="grupoRadio"> <p>Concluída</p>
+              <input type="radio" name="grupoRadio" id="i" checked><p class="active">Pendente</p>
+              <input type="radio" name="grupoRadio"> <p class="active">Concluída</p>
               <div id="criarTarefa">
-                <svg width="30px" height="50px" viewBox="20 0 9 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
-                  <path d="M18 24H30" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                  <path d="M24 18V30" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                </svg></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20,14 L20,7 C20,6.44771525 19.5522847,6 19,6 C18.4477153,6 18,6.44771525 18,7 L18,14.3414114 C18.6255579,14.1203084 19.2987292,14 20,14 Z M14.3414114,22 L6,22 C4.8954305,22 4,21.1045695 4,20 L4,7 C4,6.44771525 4.44771525,6 5,6 C5.55228475,6 6,6.44771525 6,7 L6,20 L14,20 C14,20.7012708 14.1203084,21.3744421 14.3414114,22 Z M10,11 L14,11 C14.5522847,11 15,11.4477153 15,12 C15,12.5522847 14.5522847,13 14,13 L10,13 C9.44771525,13 9,12.5522847 9,12 C9,11.4477153 9.44771525,11 10,11 Z M10,15 L14,15 C14.5522847,15 15,15.4477153 15,16 C15,16.5522847 14.5522847,17 14,17 L10,17 C9.44771525,17 9,16.5522847 9,16 C9,15.4477153 9.44771525,15 10,15 Z M21,19 L23,19 C23.5522847,19 24,19.4477153 24,20 C24,20.5522847 23.5522847,21 23,21 L21,21 L21,23 C21,23.5522847 20.5522847,24 20,24 C19.4477153,24 19,23.5522847 19,23 L19,21 L17,21 C16.4477153,21 16,20.5522847 16,20 C16,19.4477153 16.4477153,19 17,19 L19,19 L19,17 C19,16.4477153 19.4477153,16 20,16 C20.5522847,16 21,16.4477153 21,17 L21,19 Z M10.2675644,3 C10.6133738,2.40219863 11.2597176,2 12,2 C12.7402824,2 13.3866262,2.40219863 13.7324356,3 L14,3 C15.1045695,3 16,3.8954305 16,5 L16,7 C16,7.55228475 15.5522847,8 15,8 L9,8 C8.44771525,8 8,7.55228475 8,7 L8,5 C8,3.8954305 8.8954305,3 10,3 L10.2675644,3 Z M10,5 L10,6 L14,6 L14,5 L10,5 Z M12,4 C11.4477153,4 11,4.44771525 11,5 L13,5 C13,4.44771525 12.5522847,4 12,4 Z"/></svg>
+              </div>
             </div>
           </form>
         </div>
         
         <div class="tp">
-          <h1 class="title">tarefas pendentes</h1>
+          <h5 class="title">Tarefas pendentes</h5>
           <ul class="tpul">
           </ul>
         </div>
 
         </div class="tc">
-          <h2 class="title">tarefas concluidas</h2>
+          <h5 class="title">Tarefas concluídas</h5>
           <ul class="ttul">
           </ul>
         </div>
-        <div>
-          <linearGradient id="paint0_linear_7098_16311" x1="143.952" y1="49.3479" x2="284.448" y2="49.3479" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#8257E5"/>
-            <stop offset="0.53" stop-color="#D72891"/>
-            <stop offset="1" stop-color="#F1594B"/>
-        
-            </linearGradient>
-          </div>
 </body>
 </html>
